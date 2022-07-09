@@ -1,6 +1,13 @@
+import styled from "@emotion/styled";
+import { Button } from "@mui/material";
 import { useState } from "react";
+import { PropsForStyled } from "./propsForStyled";
 
-const Component: React.FC = () => {
+type Props = {
+  //
+};
+
+const Component: React.FC<Props & PropsForStyled> = ({ className }) => {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
@@ -8,13 +15,17 @@ const Component: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={className}>
       <div role="article">{count}</div>
       <div>
-        <button onClick={handleClick}>Add</button>
+        <Button onClick={handleClick}>Add</Button>
       </div>
     </div>
   );
 };
 
-export const Counter = Component;
+const StyledComponent = styled(Component)`
+  padding: 32px;
+`;
+
+export const Counter = StyledComponent;
