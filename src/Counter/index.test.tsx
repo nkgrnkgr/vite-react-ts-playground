@@ -6,9 +6,7 @@ import { Counter } from "./";
 it("Test", async () => {
   render(<Counter />);
   const button = await screen.findByRole("button");
-  userEvent.click(button);
-
+  await userEvent.click(button);
   const article = await screen.findByRole("article");
-
-  expect(article.textContent).toBe(2);
+  expect(article.textContent).toBe("1");
 });
