@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { useState } from "react";
 
 const Component: React.FC = () => {
@@ -11,7 +12,7 @@ const Component: React.FC = () => {
     <div>
       <div role="article">{count}</div>
       <div>
-        <button onClick={handleClick}>Add</button>
+        <Button onClick={handleClick}>Add</Button>
       </div>
     </div>
   );
