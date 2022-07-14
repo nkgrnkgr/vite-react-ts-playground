@@ -12,7 +12,9 @@ const Template: ComponentStory<typeof Counter> = (args) => (
   <Counter {...args} />
 );
 
-export const Normal = Template.bind({});
+export const Normal = Template.bind({
+  id: 1,
+});
 
 Normal.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);

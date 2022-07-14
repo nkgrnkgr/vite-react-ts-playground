@@ -1,14 +1,17 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
-import { useState } from "react";
 import { PropsForStyled } from "./propsForStyled";
+import { useCount } from "./useCount";
 
 type Props = {
-  //
+  counterId: number;
 };
 
-const Component: React.FC<Props & PropsForStyled> = ({ className }) => {
-  const [count, setCount] = useState(0);
+const Component: React.FC<Props & PropsForStyled> = ({
+  className,
+  counterId,
+}) => {
+  const { count, setCount } = useCount(counterId);
 
   const handleClick = () => {
     setCount(count + 1);
@@ -24,7 +27,7 @@ const Component: React.FC<Props & PropsForStyled> = ({ className }) => {
   );
 };
 
-const StyledComponent = styled(Component)`
+const StyledComponent: React.FC<Props> = styled(Component)`
   padding: 32px;
 `;
 
