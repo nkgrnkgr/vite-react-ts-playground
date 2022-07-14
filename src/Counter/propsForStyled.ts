@@ -1,3 +1,3 @@
 export type PropsForStyled = {
-  className: string;
+  className?: string;
 };
