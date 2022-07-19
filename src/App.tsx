@@ -1,9 +1,9 @@
-import { Counter } from "./Counter";
+import { SuspenseTest } from "./SuspenseTest";
 
 const Component: React.FC = () => {
   return (
     <div>
-      <Counter />
+      <SuspenseTest />
     </div>
   );
 };
