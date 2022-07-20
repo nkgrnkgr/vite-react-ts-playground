@@ -6,8 +6,11 @@ type Props = {
 };
 
 const Component: React.FC<Props> = () => {
-  console.log("AlwaysSuspend is rendered");
-  throw sleep(1000);
+  if (Math.random() < 0.5) {
+    throw sleep(1000);
+  }
+
+  return <div>Hello</div>;
 };
 
-export const AlwaysSuspend = Component;
+export const SometimeSuspend = Component;
