@@ -1,12 +1,9 @@
-import { Counter } from "./Counter";
+import { Recoil } from "./Recoil";
 
 const Component: React.FC = () => {
-  const ar = [1, 2, 3];
   return (
     <div>
-      {ar.map((id) => (
-        <Counter key={id} counterId={id} />
-      ))}
+      <Recoil />
     </div>
   );
 };
