@@ -1,29 +1,21 @@
-import { Button } from "@mui/material";
-import { useMemo, useState } from "react";
 import { fetchData1 } from "./fetchData1";
-import { sleep } from "./sleep";
+import { useData } from "./useData";
 
 export const DataLoader: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<string | null>(null);
-
-  const _ = useMemo(() => {
-    if (loading) {
-      console.log("loading is true");
-    }
-    return 1;
-  }, [loading]);
-
-  if (loading && data === null) {
-    throw fetchData1().then(setData);
-  }
+  const data = useData("DataLoader1", fetchData1);
 
   return (
     <div>
-      <div>Data is {data}</div>
-      <Button variant="contained" onClick={() => setLoading(true)}>
-        load
-      </Button>
+      <div>Data1 is {data}</div>
+    </div>
+  );
+};
+
+export const DataLoader2: React.VFC = () => {
+  const data = useData("DataLoader2", fetchData1);
+  return (
+    <div>
+      <div>Data2 is {data}</div>
     </div>
   );
 };
